@@ -1,0 +1,9 @@
+renameDuplicated<-function(x){
+  y=as.character(x)
+  y[which(duplicated(y)==TRUE)]=paste(y[which(duplicated(y)==TRUE)],"_",sep="")
+  if(length(which(duplicated(y)==TRUE))==0){
+    return(y)
+  }else{
+    renameDuplicated(y)
+  }
+}
